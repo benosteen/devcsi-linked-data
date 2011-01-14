@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+    <title>Zodiac signs displayed from RDF data</title>
+
+    <!-- Import jQuery framework -->
+    <script type="text/javascript" src="../../jQuery/js/jquery-1.4.2.js"></script> 
+
+    <!-- Import jQuery additional libraries -->
+    <script type="text/javascript" src="../../jQuery/jquery.json-2.2.js"></script> 
+
+    <!-- import rdfquery libraries -->
+    <script type="text/javascript" src="../../rdfquery/jquery.uri.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.xmlns.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.curie.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.datatype.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.rdf.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.rdfa.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.datatype.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.rdf.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.rdf.json.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.rdf.xml.js"></script>
+    <script type="text/javascript" src="../../rdfquery/jquery.rdf.turtle.js"></script>
+ 
+    <!-- Import MochiKit modules: require MochiKit library functions to be fully qualified -->
+    <script type="text/javascript">MochiKit = {__export__: false};</script>
+    <script type="text/javascript" src="../../MochiKit/Base.js"></script>
+    <script type="text/javascript" src="../../MochiKit/Iter.js"></script>
+    <script type="text/javascript" src="../../MochiKit/Logging.js"></script>
+    
+    <!-- Local functions -->
+    <script type="text/javascript" src="../js/ReadRDFData.js"></script>
+    <script type="text/javascript" src="../js/DisplayZodiacData.js"></script>
+    
+    <script>
+    // Use jQuery via jQuery(...)
+    jQuery.noConflict();
+    </script>
+
+    <!-- Execute the desired dataset listing logic -->
+    <script>
+	jQuery(document).ready( function ()
+	{   
+		  jQuery("#status").text("Loading RDF...");
+	    ReadRDFData("../data/zodiac.rdf", DisplayZodiacData);
+	});
+    </script>
+
+</head>
+
+<body>
+	<h1>Zodiac signs displayed from RDF data</h1>
+	<div>
+		<table id="ZodiacTable">
+		  <tr>
+		    <th>Name</th><th>Description</th>
+		  </tr>
+		</table>
+	</div>
+	<div id="status">
+	</div>
+</body>
+
+</html>
