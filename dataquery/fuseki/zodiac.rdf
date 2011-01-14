@@ -1,0 +1,515 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<rdf:RDF 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:occult="http://data.totl.net/occult/"
+  xmlns:planet="http://data.totl.net/planet/"
+  xmlns:element="http://data.totl.net/element/"
+  xmlns:zodiac="http://data.totl.net/zodiac/ontology/"
+  >
+
+  <rdf:Description rdf:about="file:zodiac">
+    <cc:attributionName>Temple ov thee Lemur Data Service</cc:attributionName>
+    <cc:attributionURL rdf:resource="http://data.totl.net/" />
+    <dcterms:license rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+    <dcterms:creator>Temple ov thee Lemur</dcterms:creator>
+    <dcterms:description>Zodiac Ontology.</dcterms:description>
+  </rdf:Description>
+
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/ZodiacSign">
+    <rdfs:label>A sign of the Western Zodiac</rdfs:label>
+    <owl:oneOf rdf:parseType="Collection">
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Aries" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Taurus" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Gemini" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Cancer" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Leo" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Virgo" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Libra" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Scorpio" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Sagittarius" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Capricorn" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Aquarius" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Pisces" />
+    </owl:oneOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/FireSign">
+    <rdfs:label>Fire Signs</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ZodiacSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Fire" />
+  </owl:Class>
+
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/WaterSign">
+    <rdfs:label>Water Signs</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ZodiacSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Water" />
+  </owl:Class>
+
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/EarthSign">
+    <rdfs:label>Earth Signs</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ZodiacSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Earth" />
+  </owl:Class>
+
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/AirSign">
+    <rdfs:label>Air Signs</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ZodiacSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Air" />
+  </owl:Class>
+
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/CardinalSign">
+    <rdfs:label>Cardinal Signs</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ZodiacSign" />
+  </owl:Class>
+
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/FixedSign">
+    <rdfs:label>Fixed Signs</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ZodiacSign" />
+  </owl:Class>
+
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/MutableSign">
+    <rdfs:label>Mutable Signs</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ZodiacSign" />
+  </owl:Class>
+
+  <owl:ObjectProperty rdf:about="http://data.totl.net/zodiac/ontology/sign">
+    <rdfs:label>Relates a person to their zodiac sign.</rdfs:label>
+    <rdfs:domain rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <rdfs:range rdf:resource="http://data.totl.net/zodiac/ontology/ZodiacSign" />
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:about="http://data.totl.net/zodiac/ontology/sign" />
+
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/FireSign" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/WaterSign" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/EarthSign" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/AirSign" />
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/CardinalSign" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/FixedSign" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/MutableSign" />
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Aries" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Taurus" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Gemini" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Cancer" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Leo" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Virgo" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Libra" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Scorpio" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Sagittarius" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Capricorn" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Aquarius" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Pisces" />
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Aries" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Taurus" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Gemini" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Cancer" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Leo" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Virgo" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Libra" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Scorpio" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Sagittarius" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Capricorn" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Aquarius" />
+      <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Pisces" />
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign">
+    <rdfs:label>The class of things which have a star sign.</rdfs:label>
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+    <owl:unionOf rdf:parseType="Collection">
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Aries" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Taurus" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Gemini" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Cancer" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Leo" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Virgo" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Libra" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Scorpio" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Sagittarius" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Capricorn" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Aquarius" />
+      <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Pisces" />
+    </owl:unionOf>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Aries">
+    <rdfs:label>Class of people (or cats, or things) who are Aries.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Aries" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Taurus">
+    <rdfs:label>Class of people (or cats, or things) who are Taurus.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Taurus" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Gemini">
+    <rdfs:label>Class of people (or cats, or things) who are Gemini.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Gemini" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Cancer">
+    <rdfs:label>Class of people (or cats, or things) who are Cancer.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Cancer" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Leo">
+    <rdfs:label>Class of people (or cats, or things) who are Leo.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Leo" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Virgo">
+    <rdfs:label>Class of people (or cats, or things) who are Virgo.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Virgo" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Libra">
+    <rdfs:label>Class of people (or cats, or things) who are Libra.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Libra" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Scorpio">
+    <rdfs:label>Class of people (or cats, or things) who are Scorpio.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Scorpio" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Sagittarius">
+    <rdfs:label>Class of people (or cats, or things) who are Sagittarius.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Sagittarius" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Capricorn">
+    <rdfs:label>Class of people (or cats, or things) who are Capricorn.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Capricorn" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Aquarius">
+    <rdfs:label>Class of people (or cats, or things) who are Aquarius.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Aquarius" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <owl:Class rdf:about="http://data.totl.net/zodiac/ontology/Pisces">
+    <rdfs:label>Class of people (or cats, or things) who are Pisces.</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://data.totl.net/zodiac/ontology/ThingWithZodiacSign" />
+    <owl:sameAs>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://data.totl.net/zodiac/ontology/sign"/>
+        <owl:allValuesFrom rdf:resource="http://data.totl.net/zodiac/sign/Pisces" />
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+      </owl:Restriction>
+    </owl:sameAs>
+  </owl:Class>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Aries">
+    <foaf:name>Aries</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/CardinalSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/FireSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Fire" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Aries_(astrology)" />
+    <dcterms:description>March 21 to April 19</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-03-21</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-04-19</zodiac:end>
+    <zodiac:symbol>&#x2648;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Iron" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Emperor" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Diamond" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Red" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Mars" />
+    <zodiac:phrase>I want</zodiac:phrase><zodiac:keyword>action oriented</zodiac:keyword><zodiac:keyword>pioneering</zodiac:keyword><zodiac:keyword>assertive</zodiac:keyword><zodiac:keyword>me first</zodiac:keyword><zodiac:keyword>enthusiasm</zodiac:keyword><zodiac:keyword>leader</zodiac:keyword><zodiac:keyword>competitive</zodiac:keyword><zodiac:keyword>selfish</zodiac:keyword><zodiac:keyword>head/brain</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Taurus">
+    <foaf:name>Taurus</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/FixedSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/EarthSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Earth" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Taurus_(astrology)" />
+    <dcterms:description>April 20 to May 20</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-04-20</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-05-20</zodiac:end>
+    <zodiac:symbol>&#x2649;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Copper" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Hierophant" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Emerald" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Red_Orange" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Venus" />
+    <zodiac:phrase>I have</zodiac:phrase><zodiac:keyword>sensual</zodiac:keyword><zodiac:keyword>cautious</zodiac:keyword><zodiac:keyword>acquisitive</zodiac:keyword><zodiac:keyword>musical</zodiac:keyword><zodiac:keyword>traditional</zodiac:keyword><zodiac:keyword>stubborn</zodiac:keyword><zodiac:keyword>throat/neck</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Gemini">
+    <foaf:name>Gemini</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/MutableSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/AirSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Air" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Gemini_(astrology)" />
+    <dcterms:description>May 21 to June 21</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-05-21</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-06-21</zodiac:end>
+    <zodiac:symbol>&#x264A;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Mercury" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Lovers" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Agate" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Orange" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Mercury" />
+    <zodiac:phrase>I think</zodiac:phrase><zodiac:keyword>curious</zodiac:keyword><zodiac:keyword>talkative</zodiac:keyword><zodiac:keyword>sociable</zodiac:keyword><zodiac:keyword>duality</zodiac:keyword><zodiac:keyword>mercurial</zodiac:keyword><zodiac:keyword>whimsical</zodiac:keyword><zodiac:keyword>intelligent</zodiac:keyword><zodiac:keyword>superficial</zodiac:keyword><zodiac:keyword>hands/arms</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Cancer">
+    <foaf:name>Cancer</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/CardinalSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/WaterSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Water" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Cancer_(astrology)" />
+    <dcterms:description>June 22 to July 22</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-06-22</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-07-22</zodiac:end>
+    <zodiac:symbol>&#x264B;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Silver" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Chariot" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Pearl" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Amber" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Moon" />
+    <zodiac:phrase>I feel</zodiac:phrase><zodiac:keyword>sensitive</zodiac:keyword><zodiac:keyword>tenacious</zodiac:keyword><zodiac:keyword>family and home oriented</zodiac:keyword><zodiac:keyword>helpful</zodiac:keyword><zodiac:keyword>nurturing</zodiac:keyword><zodiac:keyword>moody</zodiac:keyword><zodiac:keyword>stomach/breasts</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Leo">
+    <foaf:name>Leo</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/FixedSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/FireSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Fire" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Leo_(astrology)" />
+    <dcterms:description>July 23 to August 22</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-07-23</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-08-22</zodiac:end>
+    <zodiac:symbol>&#x264C;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Gold" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Strength" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Peridot" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Yellow" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Sun" />
+    <zodiac:phrase>I am</zodiac:phrase><zodiac:keyword>passionate</zodiac:keyword><zodiac:keyword>dramatic</zodiac:keyword><zodiac:keyword>independent</zodiac:keyword><zodiac:keyword>noble</zodiac:keyword><zodiac:keyword>creative</zodiac:keyword><zodiac:keyword>leader</zodiac:keyword><zodiac:keyword>egotistical</zodiac:keyword><zodiac:keyword>heart/back</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Virgo">
+    <foaf:name>Virgo</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/MutableSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/EarthSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Earth" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Virgo_(astrology)" />
+    <dcterms:description>August 23 to September 22</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-08-23</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-09-22</zodiac:end>
+    <zodiac:symbol>&#x264D;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Mercury" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Hermit" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Sapphire" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Yellow_Green" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Chiron" /><occult:correspondsTo rdf:resource="http://data.totl.net/planet/Mercury" />
+    <zodiac:phrase>I serve</zodiac:phrase><zodiac:keyword>practical</zodiac:keyword><zodiac:keyword>work and service oriented</zodiac:keyword><zodiac:keyword>critical</zodiac:keyword><zodiac:keyword>common sense</zodiac:keyword><zodiac:keyword>intelligent</zodiac:keyword><zodiac:keyword>health conscious</zodiac:keyword><zodiac:keyword>fussy</zodiac:keyword><zodiac:keyword>intestines/digestion</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Libra">
+    <foaf:name>Libra</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/CardinalSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/AirSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Air" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Libra_(astrology)" />
+    <dcterms:description>September 23 to October 23</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-09-23</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-10-23</zodiac:end>
+    <zodiac:symbol>&#x264E;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Brass" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Justice" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Opal" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Green" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Venus" />
+    <zodiac:phrase>We are</zodiac:phrase><zodiac:keyword>partnerships</zodiac:keyword><zodiac:keyword>balance</zodiac:keyword><zodiac:keyword>grace</zodiac:keyword><zodiac:keyword>charm</zodiac:keyword><zodiac:keyword>cooperative</zodiac:keyword><zodiac:keyword>social</zodiac:keyword><zodiac:keyword>ideas</zodiac:keyword><zodiac:keyword>lazy</zodiac:keyword><zodiac:keyword>kidneys/lumbar</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Scorpio">
+    <foaf:name>Scorpio</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/FixedSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/WaterSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Water" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Scorpio_(astrology)" />
+    <dcterms:description>October 24 to November 22</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-10-24</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-11-22</zodiac:end>
+    <zodiac:symbol>&#x264F;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Iron" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Death" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Topaz" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Blue_Green" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Pluto" /><occult:correspondsTo rdf:resource="http://data.totl.net/planet/Mars" />
+    <zodiac:phrase>I desire</zodiac:phrase><zodiac:keyword>intense</zodiac:keyword><zodiac:keyword>controlling</zodiac:keyword><zodiac:keyword>sexual</zodiac:keyword><zodiac:keyword>compulsive</zodiac:keyword><zodiac:keyword>deep</zodiac:keyword><zodiac:keyword>secretive</zodiac:keyword><zodiac:keyword>mysterious</zodiac:keyword><zodiac:keyword>obsessive</zodiac:keyword><zodiac:keyword>genitals</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Sagittarius">
+    <foaf:name>Sagittarius</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/MutableSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/FireSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Fire" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Sagittarius_(astrology)" />
+    <dcterms:description>November 23 to December 21</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-11-23</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-12-21</zodiac:end>
+    <zodiac:symbol>&#x2650;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Tin" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Temperance" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Turquoise" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Blue" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Jupiter" />
+    <zodiac:phrase>I seek</zodiac:phrase><zodiac:keyword>philosophic</zodiac:keyword><zodiac:keyword>fun-loving</zodiac:keyword><zodiac:keyword>adventurous</zodiac:keyword><zodiac:keyword>blundering</zodiac:keyword><zodiac:keyword>wanderlust</zodiac:keyword><zodiac:keyword>scattered</zodiac:keyword><zodiac:keyword>hips/thighs</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Capricorn">
+    <foaf:name>Capricorn</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/CardinalSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/EarthSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Earth" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Capricorn_(astrology)" />
+    <dcterms:description>December 22 to January 19</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-12-22</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-01-19</zodiac:end>
+    <zodiac:symbol>&#x2651;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Lead" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Devil" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Garnet" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Indigo" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Saturn" />
+    <zodiac:phrase>I build</zodiac:phrase><zodiac:keyword>ambitious</zodiac:keyword><zodiac:keyword>cautious</zodiac:keyword><zodiac:keyword>authoritative</zodiac:keyword><zodiac:keyword>cunning</zodiac:keyword><zodiac:keyword>competent</zodiac:keyword><zodiac:keyword>stable</zodiac:keyword><zodiac:keyword>saturnine</zodiac:keyword><zodiac:keyword>knees/skeleton</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Aquarius">
+    <foaf:name>Aquarius</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/FixedSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/AirSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Air" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Aquarius_(astrology)" />
+    <dcterms:description>January 20 to February 18</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-01-20</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-02-18</zodiac:end>
+    <zodiac:symbol>&#x2652;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Uranium" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Star" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Amethyst" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Violet" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Uranus" /><occult:correspondsTo rdf:resource="http://data.totl.net/planet/Saturn" />
+    <zodiac:phrase>I know</zodiac:phrase><zodiac:keyword>friendships</zodiac:keyword><zodiac:keyword>cause-oriented</zodiac:keyword><zodiac:keyword>the group</zodiac:keyword><zodiac:keyword>society</zodiac:keyword><zodiac:keyword>progressive</zodiac:keyword><zodiac:keyword>eccentric</zodiac:keyword><zodiac:keyword>aloof</zodiac:keyword><zodiac:keyword>calves/ankles</zodiac:keyword>
+
+  </zodiac:Sign>
+  <zodiac:Sign rdf:about="http://data.totl.net/zodiac/sign/Pisces">
+    <foaf:name>Pisces</foaf:name>
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/MutableSign" />
+    <rdf:type rdf:resource="http://data.totl.net/zodiac/ontology/WaterSign" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/element/Water" />
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Pisces_(astrology)" />
+    <dcterms:description>February 19 to March 20</dcterms:description>
+    <zodiac:start rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-02-19</zodiac:start>
+    <zodiac:end rdf:datatype="http://www.w3.org/2001/XMLSchema#gMonthDay">-03-20</zodiac:end>
+    <zodiac:symbol>&#x2653;</zodiac:symbol>
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Tin" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/tarot/card/Moon" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Aquamarine" />
+    <occult:correspondsTo rdf:resource="http://dbpedia.org/resource/Scarlet" />
+    <occult:correspondsTo rdf:resource="http://data.totl.net/planet/Neptune" /><occult:correspondsTo rdf:resource="http://data.totl.net/planet/Jupiter " />
+    <zodiac:phrase>I believe</zodiac:phrase><zodiac:keyword>feeling</zodiac:keyword><zodiac:keyword>duality</zodiac:keyword><zodiac:keyword>spirituality</zodiac:keyword><zodiac:keyword>soul growth</zodiac:keyword><zodiac:keyword>suffering</zodiac:keyword><zodiac:keyword>artistic</zodiac:keyword><zodiac:keyword>overly emotional</zodiac:keyword><zodiac:keyword>feet</zodiac:keyword>
+
+  </zodiac:Sign>
+
+</rdf:RDF>

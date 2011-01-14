@@ -1,0 +1,46 @@
+Prerequisites:
+- java 6 installed
+
+See instructions at http://openjena.org/wiki/Fuseki
+
+Download Fuseki ZIP file from http://openjena.org/repo/org/openjena/fuseki/
+e.g. http://openjena.org/repo/org/openjena/fuseki/0.1.0/fuseki-0.1.0.zip
+
+Create a working directory and unzip fuseki zip file into it.
+
+Start a command session and change to the directory where fuseki 
+has been unzipped.
+
+On linux/Mac systems, run the command to start the fuseki server:
+  chmod +x fuseki-server s-*
+  ./fuseki-server --update --mem /dataset
+
+On windows systems, you need to use java directly to start the server:
+  java -jar fuseki-0.1.0-server.jar --update --mem /dataset
+  
+Now start a web browser and load the page at http://localhost:3030/
+
+Select Control panel, and click through to a query page which also provides
+for selecting an RDF file to load into the triple store.
+
+This project directoiry includes a data file provided by Chris Gutterige
+at http://data.totl.net/, which may be loaded.
+
+Once the data is loaded, go back to the control panel page, and see that you
+can submit a SPARQL query.
+
+For a quick initial test, try this query (in file query1.sparql), 
+selecting "Text" for the output format:
+
+SELECT (COUNT (*) AS ?c) WHERE { ?s  ?p ?o }
+
+Using the zodiac.rdf file, this result should be displayed:
+
+-------
+| c   |
+=======
+| 554 |
+-------
+
+There are some more sample queries in query2.sparql and query3.sparql.
+ 
