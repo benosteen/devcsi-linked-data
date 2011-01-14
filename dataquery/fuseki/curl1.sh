@@ -1,17 +1,7 @@
 echo "===== SEND SPARQL QUERY ====="
 
 echo "#" >query.sparql
-#echo "SELECT * WHERE { ?s ?p ?o } LIMIT 10" >>query.sparql
-
-cp zodiac-prefixes.txt query.sparql
-
-# List all zodiac signs assiated with the element "Air"
-
-echo "SELECT ?name ?desc WHERE" >> query.sparql
-echo "  { ?s occult:correspondsTo element:Air" >> query.sparql
-echo "     ; foaf:name ?name" >> query.sparql
-echo "     ; dcterms:description ?desc" >> query.sparql
-echo "  }" >> query.sparql
+echo "SELECT * WHERE { ?s ?p ?o } LIMIT 10" >>query.sparql
 
 curl http://localhost:3030/dataset/query -H "accept: application/sparql-results+json" --data-urlencode query@query.sparql
 
