@@ -1,0 +1,66 @@
+@prefix spec: <http://services.data.gov.uk/education/api#> .
+
+@prefix api:     <http://purl.org/linked-data/api/vocab#> .
+@prefix lda:     <http://purl.org/linked-data/api/vocab#> .
+
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix school:  <http://education.data.gov.uk/def/school/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#VIEWERS
+
+spec:viewerShort
+	a api:Viewer ;
+	api:name "short" ;
+	api:property rdf:type, rdfs:label, school:establishmentStatus, school:typeOfEstablishment.
+
+############################################################################################
+#
+# API DESCRIPTION
+#
+############################################################################################
+
+spec:api
+	a api:API ;
+	rdfs:label "Minimal API"@en;
+	api:maxPageSize "50";
+	api:defaultPageSize "10" ;
+	api:sparqlEndpoint <http://localhost:3030/ds/query> ;   # SPARQL endpoint
+	api:endpoint                                            # LDA endpoint
+	   spec:schools
+	   .
+# Can specify more endpoints for this api:API
+
+#ENDPOINTS
+
+spec:schools
+	a api:ListEndpoint ;                 # alt: itemEndpoint
+	api:uriTemplate "/explore/me" ;      # Appended to LDAS endpoint URI
+	api:select "prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> select distinct ?item where {?something rdf:type ?item}" ;
+	api:defaultViewer api:describeViewer ;
+	api:viewer [ 
+		api:name "geo" ;
+		api:property rdf:type, rdfs:label
+	]
+	.
+
+# For default viewer: http://localhost:8080/elda/api/explore/me
+# For geo viewer: http://localhost:8080/elda/api/explore/me.xml?_view=geo
+
+# Prtoperties may be dotted chains
+
+
+# VOCABULARY
+
+rdf:type
+  api:label "type" .
+  
+school:School
+      api:label "School" .
+
+rdfs:label
+      api:label "label" .
+
+

@@ -1,0 +1,71 @@
+@prefix spec: <http://services.data.gov.uk/education/api#> .
+
+@prefix api:     <http://purl.org/linked-data/api/vocab#> .
+@prefix lda:     <http://purl.org/linked-data/api/vocab#> .
+
+@prefix census-geo:  <http://statistics.gov.data.uk/def/census-geography/> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix education-geo:  <http://statistics.gov.data.uk/def/education-geography/> .
+@prefix electoral-geo:  <http://statistics.gov.data.uk/def/electoral-geography/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix geo:     <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix ons-admingeo:  <http://statistics.data.gov.uk/def/administrative-geography/> .
+@prefix os-admingeo:  <http://data.ordnancesurvey.co.uk/ontology/admingeo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix school:  <http://education.data.gov.uk/def/school/> .
+@prefix spatialrelations:  <http://data.ordnancesurvey.co.uk/ontology/spatialrelations/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#VIEWERS
+
+spec:viewerShort
+	a api:Viewer ;
+	api:name "short" ;
+	api:property rdf:type, rdfs:label, school:establishmentStatus, school:typeOfEstablishment.
+
+spec:viewerMedium
+	a api:Viewer ;
+	api:name "medium" ;
+	api:property rdf:type, rdfs:label, school:establishmentStatus, school:typeOfEstablishment, school:schoolCapacity, school:phaseOfEducation, 
+				   school:districtAdministrative, school:parliamentaryConstituency, school:administrativeWard, school:nurseryProvision .
+
+############################################################################################
+#
+# API DESCRIPTION
+#
+############################################################################################
+
+spec:api
+	a api:API ;
+	rdfs:label "Minimal API"@en;
+	api:maxPageSize "50";
+	api:defaultPageSize "10" ;
+	api:sparqlEndpoint <http://services.data.gov.uk/education/sparql> ;
+	api:endpoint 
+	   spec:schools
+	   .
+    
+#ENDPOINTS
+
+spec:schools
+	a api:ListEndpoint ;
+	api:uriTemplate "/education/schools" ;
+	api:selector [ 
+		api:filter "type=School"
+	] ;
+	api:defaultViewer api:describeViewer ;
+	api:viewer [ 
+		api:name "geo" ;
+		api:property rdf:type, rdfs:label
+	]
+	.
+
+rdf:type
+  api:label "type" .
+  
+rdfs:label
+      api:label "label" .
+
+
