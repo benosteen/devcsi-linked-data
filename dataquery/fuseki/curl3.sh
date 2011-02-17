@@ -7,8 +7,9 @@ cp zodiac-prefixes.txt query.sparql
 
 # List all zodiac signs assiated with the element "Air"
 
-echo "SELECT ?s ?desc WHERE" >> query.sparql
-echo "  { ?s foaf:name 'Libra'" >> query.sparql
+echo " SELECT ?name ?desc WHERE " >> query.sparql
+echo "  { ?s occult:correspondsTo element:Air " >> query.sparql
+echo "     ; foaf:name ?name" >> query.sparql
 echo "     ; dcterms:description ?desc" >> query.sparql
 echo "  }" >> query.sparql
 
